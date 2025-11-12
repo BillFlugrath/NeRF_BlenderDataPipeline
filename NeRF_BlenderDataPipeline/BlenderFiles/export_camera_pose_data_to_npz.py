@@ -32,12 +32,11 @@ def SavePosesToNPZ(cam, filepath):
 print("start script")
 
 
-def TestFunc():
-    print("Bills TestFunc()")
+def ExportPoses():
+    print("ExportPoses() called")
     
     
-#if __name__ == "__main__":
-    print("Hey Bill!")
+    print("Camera pose export started...")
     # Insert your camera name here
     cam = bpy.data.objects['Camera']
  
