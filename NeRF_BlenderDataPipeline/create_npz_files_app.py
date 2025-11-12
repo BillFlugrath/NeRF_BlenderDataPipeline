@@ -1,10 +1,7 @@
-#import tensorflow as tf
-#import numpy as np
-
 
 import npz_file_utilities as bills_npz
 
-# Create a new npz file from a sequence of image files.
+# Create a new npz file for training data from a sequence of image files and camera poses file.
 input_images_path = "./training_data_images"
 save_file_out_name = "./training_data_files/training_data_final.npz"
 input_poses_path = "./training_data_files/camera_poses.npz"
