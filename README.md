@@ -1,7 +1,7 @@
 # NeRF_BlenderDataPipeline
 Create training data for a Neural Radiance Field (ie NeRF) demo app.  The training data is created in Blender and exported into npz files.
 
-The NeRF_BlenderDataPipeline project, is used to create training data for a specific NeRF demo application.  This demo can be found either:
+The NeRF_BlenderDataPipeline project is used to create training data for a specific NeRF demo application.  This demo can be found either:
 
 1) https://github.com/keras-team/keras-io/blob/master/examples/vision/nerf.py
 Or
