@@ -12,11 +12,11 @@ import tensorflow.keras as keras
 from tensorflow.keras import layers
 
 import os
-import glob
-import imageio.v2 as imageio
+#import glob
+#import imageio.v2 as imageio
 import numpy as np
-from tqdm import tqdm
-import matplotlib.pyplot as plt
+#from tqdm import tqdm
+#import matplotlib.pyplot as plt
 import matrix_math_utilities as bills_math
 from PIL import Image
 
@@ -96,8 +96,6 @@ def GetCameraData(poses_npz_path):
     return poses, focal
 
 
-#################################################
-# call test functions
 
 
 
