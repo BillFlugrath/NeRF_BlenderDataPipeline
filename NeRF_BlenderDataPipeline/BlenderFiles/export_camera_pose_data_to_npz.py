@@ -29,7 +29,7 @@ def SavePosesToNPZ(cam, filepath):
 
 
 
-print("start script")
+print("Start script")
 
 
 def ExportPoses():
@@ -45,44 +45,6 @@ def ExportPoses():
     scene = bpy.context.scene
     frame = scene.frame_start
 
-    """
-    filepath=".\\camera_data.txt"
-    print("Filepath=" + filepath)
-    
-    f = open(filepath, 'w', encoding='utf-8')
-    while frame <= scene.frame_end:
-        print("Entered while loop")
-        scene.frame_set(frame)
-        x, y, z = mw.to_translation()
-        rx, ry, rz = mw.to_euler('XYZ')
-        f.write("%d" % frame)
-        f.write(", ")
-        f.write("%5.3f, %5.3f, %5.3f" % (x, y, z))
-        f.write(", ")
-        f.write("%5.3f, %5.3f, %5.3f" % (rx, ry, rz))
-        f.write("\n")
-        frame += 1
-        print("wrote camera data")
-    f.close()
-    """
-
-    """
-    filepath=".\\cam_world.txt"
-    print("Filepath=" + filepath)
-    
-    row=1
-    print("Camera matrix world",cam.matrix_world[row] )
-      
-    #write 4x4 world matrix
-    f = open(filepath, 'w', encoding='utf-8')
-    
-    for row in range(0,4):
-        f.write("%5.3f, %5.3f, %5.3f, %5.3f  " % (cam.matrix_world[row][0],
-            cam.matrix_world[row][1], cam.matrix_world[row][2], 
-            cam.matrix_world[row][3]))
-            
-    f.close()
-    """
     
     location, rotation = cam.matrix_world.decompose()[0:2]
     print("Camera pos:", location[0], location[1], location[2])
@@ -92,20 +54,6 @@ def ExportPoses():
 
     print("Camera matrix world",cam.matrix_world )
     
-    
-    #save npz
-    """
-    filepath=".\\camera_pose.npz"
-    print("Filepath=" + filepath)
-    data_dict={'poses' : cam.matrix_world}
-
-    numpy.savez_compressed(filepath, **data_dict)
-    
-     # load the npz file
-    loaded_data = numpy.load(filepath)
-    loaded_poses = loaded_data['poses']
-    print("Poses from npz", loaded_poses)
-    """
     
     # save all poses to npz
     filepath=".\\camera_poses.npz"
