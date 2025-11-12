@@ -9,6 +9,7 @@ Or
 
 Please download and checkout those links first.
 They contain amazing information on the theory of NeRFs and how the demo code works.  The demo includes training data which is perfect for learning how NeRFs work.  If you wish to create new training data for the demo, and continue experimentation, then this project, NeRF_BlenderDataPipeline, can help with that. The demo comes with a file "tiny_nerf_data.npz" that is used for training. To use new training data, we simply need to make a new npz file that has the new data.  The NeRF_BlenderDataPipeline projects has an example Blender scene file with a camera animation.  This scene file can be used to generate new training data.  The training data for the NeRF demo is contained in a single npz file.  This file contains:
-a) The images used for training
-b) The camera poses (i.e. view matrices) used for training
-c) A camera intrinsic scalar value called "Focal" which is roughly the focal length.
+
+1) The images used for training
+2) The camera poses (i.e. view matrices) used for training
+3) A camera intrinsic scalar value called "Focal" which is roughly the focal length.
