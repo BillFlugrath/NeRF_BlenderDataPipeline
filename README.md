@@ -13,3 +13,5 @@ They contain amazing information on the theory of NeRFs and how the demo code wo
 1) The images used for training
 2) The camera poses (i.e. view matrices) used for training
 3) A camera intrinsic scalar value called "Focal" which is roughly the focal length.
+
+Thus, the data pipeline starts with a Blender scene with the end result being an npz file with the correct format for the NeRF demo to train on.  This project includes a sample Blender file that was output and used for training.  It also includes a sample output image sequence and camera pose file.
