@@ -1,6 +1,6 @@
 To start your python script to Output Camera Poses:
 
-1) Load the text file "camera_poses.npz" via the Scripting tab->Text->Open.
+1) Load the text file "export_camera_pose_data_to_npz.py" via the Scripting tab->Text->Open.
 
 2) Choose Text->Run Script from the Scripting toolbar.
 
