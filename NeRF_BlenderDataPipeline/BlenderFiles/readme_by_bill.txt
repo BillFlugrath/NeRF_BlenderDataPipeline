@@ -1,6 +1,6 @@
 To start your python script to Output Camera Poses:
 
-1) Load the text file via the Scripting tab->Text->Open.
+1) Load the text file "camera_poses.npz" via the Scripting tab->Text->Open.
 
 2) Choose Text->Run Script from the Scripting toolbar.
 
@@ -31,4 +31,6 @@ To output png image sequence:
 3) Go to the top tool bar of Window and Select Render->Render Animation.  This will trigger the frame
 by frame output of the rendered images, one image per frame into the output folder.
 
+
+At this point, copy the exported image sequence and "camera_poses.npz" file to the folder where the "create_npz_files_app.py"script exists.  Open the python script, "create_npz_files_app.py" and set the input filenames, images sizes, etc.  Then run the script.  The output will be a single npz file ready to be used for training.
 
