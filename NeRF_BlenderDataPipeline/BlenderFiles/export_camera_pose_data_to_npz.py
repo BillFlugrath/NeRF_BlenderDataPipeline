@@ -46,7 +46,7 @@ def ExportPoses():
     frame = scene.frame_start
 
     """
-    filepath="C:\\Users\\bflug\\Documents\\BlenderFilesByBill\\camera_data.txt"
+    filepath=".\\camera_data.txt"
     print("Filepath=" + filepath)
     
     f = open(filepath, 'w', encoding='utf-8')
@@ -67,7 +67,7 @@ def ExportPoses():
     """
 
     """
-    filepath="C:\\Users\\bflug\\Documents\\BlenderFilesByBill\\cam_world.txt"
+    filepath=".\\cam_world.txt"
     print("Filepath=" + filepath)
     
     row=1
@@ -95,7 +95,7 @@ def ExportPoses():
     
     #save npz
     """
-    filepath="C:\\Users\\bflug\\Documents\\BlenderFilesByBill\\camera_pose.npz"
+    filepath=".\\camera_pose.npz"
     print("Filepath=" + filepath)
     data_dict={'poses' : cam.matrix_world}
 
@@ -108,7 +108,7 @@ def ExportPoses():
     """
     
     # save all poses to npz
-    filepath="C:\\Users\\bflug\\Documents\\BlenderFilesByBill\\camera_poses.npz"
+    filepath=".\\camera_poses.npz"
     SavePosesToNPZ(cam, filepath)
     
      # load the npz file
