@@ -13,7 +13,7 @@ The Python console should now be open.
 4) The file "camera_poses.npz" should have been generated.  Copy it to the correct location in your nerf
 application folder for later use in training.
 
-ExportPoses() is a function in the open .py script.  If a few scripts were opened, it might be necessary to change the index such as myModule = bpy.data.texts[1].as_module() for example to use the 2nd script that ws opened.
+ExportPoses() is a function in the open .py script.  If a few scripts were opened, it might be necessary to change the index such as myModule = bpy.data.texts[1].as_module() for example to use the 2nd script that was opened.
 
 
 How to output training data images:
