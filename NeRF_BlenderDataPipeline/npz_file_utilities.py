@@ -1,24 +1,6 @@
 
-import os
-
-os.environ["KERAS_BACKEND"] = "tensorflow"
-
-import tensorflow as tf
-
-# Setting random seed to obtain reproducible results.
-tf.random.set_seed(42)
-
-import tensorflow.keras as keras
-from tensorflow.keras import layers
-
-import os
 import numpy as np
 from PIL import Image
-
-import matrix_math_utilities as bills_math
-
-#BillF added to prevent multiple copies of open mp dll
-os.environ["KMP_DUPLICATE_LIB_OK"]="TRUE"
 
 def Create_NPZFile_FromImageSequenceAndPoses(width, height,input_images_path, save_file_out_name, num_images,
                                              camera_poses_npz, fov, compress_npz):
