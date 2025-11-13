@@ -1,20 +1,10 @@
-To start your python script to Output Camera Poses:
+The following describes how to generate training data for the NeRF demo app.  The training data exists in a single .npz file that contains camera poses, images, and focal length.
 
-1) Load the text file "export_camera_pose_data_to_npz.py" via the Scripting tab->Text->Open.
+See the included Blender example file for an example of the process.
 
-2) Choose Text->Run Script from the Scripting toolbar.
+Create a Blender scene file with an object at origin and animate a camera that rotates around the object for a full 360 degrees. 
 
-The Python console should now be open.
-
-3) In the python console on left screen panel:
->>>myModule = bpy.data.texts[0].as_module()
->>>myModule.ExportPoses()
-
-4) The file "camera_poses.npz" should have been generated.  Copy it to the correct location in your nerf
-application folder for later use in training.
-
-ExportPoses() is a function in the open .py script.  If a few scripts were opened, it might be necessary to change the index such as myModule = bpy.data.texts[1].as_module() for example to use the 2nd script that was opened.
-
+With the scene created, the first step is to export the image sequence.  The image sequence is a sequence of image files where each file corresponds to one frame of the camera animation.
 
 How to output training data images:
 
@@ -30,7 +20,39 @@ To output png image sequence:
 
 3) Go to the top tool bar of Window and Select Render->Render Animation.  This will trigger the frame
 by frame output of the rendered images, one image per frame into the output folder.
+4) Check the output folder and make sure the folder has the correct jpg, png, etc images.
+
+The next step is to create the final npz file.  This file will hold the training data that will be read by the demo NeRF application.
 
 
-At this point, copy the exported image sequence and "camera_poses.npz" file to the folder where the "create_npz_files_app.py"script exists.  Open the python script, "create_npz_files_app.py" and set the input filenames, images sizes, etc.  Then run the script.  The output will be a single npz file ready to be used for training.
+Start python script to output final .npz file:
+
+
+1) Load the text file "export_training_data_to_npz.py" via the Scripting tab->Text->Open.
+
+2) Choose Text->Run Script from the Scripting toolbar.
+
+The Python console should now be open.
+
+3) In the python console on left screen panel:
+
+>>>myModule = bpy.data.texts[0].as_module()
+>>>myModule.ExportAll()
+
+ExportAll() is a function in the open .py script.  If a few scripts were opened, it might be necessary to change the index such as myModule = bpy.data.texts[1].as_module() for example to use the 2nd script that was opened.
+
+
+4) The files "training_data_final.npz" and "camera_poses.npz" should have been generated. 
+
+
+The file "training_data_final.npz" is the default name in the python script for the final training data file.  It can be renamed if desired.  This is the file that the NeRF application will read and use to train with.
+
+The file "camera_poses.npz" is a temporary file and is not needed.
+
+The NeRF app has a hardcoded filename, "tiny_nerf_data".  Either change the name to the new npz file, "training_data_final.npz" or rename the new file.
+
+
+
+
+
 

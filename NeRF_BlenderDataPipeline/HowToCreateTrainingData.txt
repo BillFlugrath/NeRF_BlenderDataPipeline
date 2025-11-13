@@ -6,7 +6,7 @@ Or
 
 Please download and checkout those links first!
 They contain amazing information on the theory of NeRFs and how the code works.  The demo includes training data which is perfect for learning how NeRFs work.  If you wish to create new training data for the demo,
-and continue experimentation, then this project can help with that.The demo comes with a file "tiny_nerf_data.npz" that is used for training. To use new training data, we simply need to make a new
+and continue experimentation, then this project can help with that. The demo comes with a file "tiny_nerf_data.npz" that is used for training. To use new training data, we simply need to make a new
 npz file that has the new data.    
 
 How To Create New Training Data:
@@ -21,8 +21,6 @@ The easiest way to create new training data is with Blender.  Thus, the high-lev
 
 1) Create a model in Blender with a camera that animates 360 degrees around the model.
 2) Output an image sequence of the camera output at each camera pose.  This will be a folder containing images named in sequence such as image000.png, image001.png, image002.png etc.
-3) Run a python script in Blender that generates an npz file that contains all of the camera poses, with one pose for each frame (and therefore one pose per output image).
+3) Run a python script in Blender that generates an npz file that contains all of the camera poses, with one pose for each frame (and therefore one pose per output image).  It then creates a new npz file and combines the poses with the images.
 
 See the "readme_by_bill.txt" file in the Blender folder for detailed instructions.
-
-At this point, copy the exported image sequence and "camera_poses.npz" file to the folder where the "create_npz_files_app.py"script exists.  Open the python script, "create_npz_files_app.py" and set the input filenames, images sizes, etc.  Then run the script.  The output will be a single npz file ready to be used for training.

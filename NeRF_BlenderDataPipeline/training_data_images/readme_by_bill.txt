@@ -1,1 +1,0 @@
-This folder contains the raw image training data.  It is an image file sequence.  These files need to get packaged into a single .npz file using the utility app.
