@@ -11,11 +11,22 @@ npz file that has the new data.
 
 How To Create New Training Data:
 
+To create the training data, you need to have Blender installed.  The standard Blender install has a version of python installed.  To run the python script to generate training data, two extra python libraries need to be installed.  These are:
+
+1) PIL (Python Imaging Library), which is a powerful library for image processing in Python.  
+
+2) NumPy, which is Numerical Python.
+
+If you are unfamilar with python, simply consult the Blender docs on the web for installing addition python libraries.
+
+
 The NeRF application loads all of its training data in a single npz file.  This file contains three sections:
 
 a) The images used for training
 b) The camera poses (i.e. view matrices) used for training
 c) A camera intrinsic scalar value called "Focal" which is roughly the focal length.
+
+Thus, we will create a new file with the same layout, but with different training data.
 
 The easiest way to create new training data is with Blender.  Thus, the high-level steps are:
 
