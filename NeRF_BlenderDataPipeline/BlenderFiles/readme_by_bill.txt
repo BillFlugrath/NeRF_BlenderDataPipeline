@@ -34,7 +34,22 @@ Start python script to output final .npz file:
 
 The Python console should now be open.
 
-3) In the python console on left screen panel:
+3) There are several user defined variables in the script that need to be manually set, these are:
+
+    input_images_path = "./tmp" folder with the previously output image sequence
+    save_file_out_name = "training_data_final.npz" final filename with training data to output
+    input_poses_path = "./camera_poses.npz" file that contains the temp npz file
+    num_images = 106  the number of images in the sequence
+    width = 100  width of each image
+    height = 100 height of each image
+    fov = 29.0  camera fov
+    compress_npz= True
+
+The only variables that *must* be updated are input_images_path, num_images, width, and height.
+The other variables can use the default values if you wish.  Just update them in the python script and save the file.  Be sure that Blender uses the changes to the variables since sometimes Blender may use previous data.
+
+
+4) In the python console on left screen panel type:
 
 >>>myModule = bpy.data.texts[0].as_module()
 >>>myModule.ExportAll()
@@ -42,7 +57,7 @@ The Python console should now be open.
 ExportAll() is a function in the open .py script.  If a few scripts were opened, it might be necessary to change the index such as myModule = bpy.data.texts[1].as_module() for example to use the 2nd script that was opened.
 
 
-4) The files "training_data_final.npz" and "camera_poses.npz" should have been generated. 
+5) The files "training_data_final.npz" and "camera_poses.npz" should have been generated. 
 
 
 The file "training_data_final.npz" is the default name in the python script for the final training data file.  It can be renamed if desired.  This is the file that the NeRF application will read and use to train with.
