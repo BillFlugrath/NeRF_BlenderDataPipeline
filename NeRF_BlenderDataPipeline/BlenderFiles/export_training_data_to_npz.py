@@ -29,8 +29,8 @@ def SavePosesToNPZ(cam, filepath):
 
 
 
-def Create_NPZFile_FromImageSequenceAndPoses(width, height,input_images_path, save_file_out_name, num_images,
-                                             camera_poses_npz, fov, compress_npz):
+def Create_NPZFile_FromImageSequenceAndPoses(width, height,input_images_path, input_images_base_name,
+        input_images_file_type, save_file_out_name, num_images, camera_poses_npz, fov, compress_npz):
 
     print("Create_NPZFile_FromImageSequenceAndPoses() called")
     
@@ -105,6 +105,8 @@ def ExportPoses():
     # USER DEFINED VALUES (ie Fill these in before export).
     
     input_images_path = "./tmp"
+    input_images_base_name ="fileout"
+    input_images_file_type = ".jpg"
     save_file_out_name = "training_data_final.npz"
     input_poses_path = "./camera_poses.npz"
     num_images = 106
@@ -114,8 +116,8 @@ def ExportPoses():
     compress_npz= True
 
     # load raw images into npz and then combine them with the poses npz file to create final training data
-    Create_NPZFile_FromImageSequenceAndPoses(width, height,input_images_path,
-        save_file_out_name,num_images, input_poses_path, 
+    Create_NPZFile_FromImageSequenceAndPoses(width, height, input_images_path, input_images_base_name,
+        input_images_file_type, save_file_out_name,num_images, input_poses_path, 
         fov, compress_npz)
     
     return {'FINISHED'}
