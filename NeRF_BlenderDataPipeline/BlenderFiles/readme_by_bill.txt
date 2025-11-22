@@ -16,7 +16,7 @@ To output png image sequence:
 1) Choose camera.
 2) Select the Output Properties tab ( looks like a printer)
 	In Frame Range, set Frame Start and End values for the animation.
-	In the Output, choose folder to write image sequence to and choose file type ex png
+	In the Output, choose folder to write image sequence to and choose file type ex jpg or png
 
 3) Go to the top tool bar of Window and Select Render->Render Animation.  This will trigger the frame
 by frame output of the rendered images, one image per frame into the output folder.
@@ -37,6 +37,8 @@ The Python console should now be open.
 3) There are several user defined variables in the script that need to be manually set, these are:
 
     input_images_path = "./tmp" folder with the previously output image sequence
+    input_images_base_name ="fileout"  base name of each image without the concatenated image number
+    input_images_file_type = ".jpg"  image file type such as jpg or png
     save_file_out_name = "training_data_final.npz" final filename with training data to output
     input_poses_path = "./camera_poses.npz" file that contains the temp npz file
     num_images = 106  the number of images in the sequence
@@ -45,7 +47,17 @@ The Python console should now be open.
     fov = 29.0  camera fov
     compress_npz= True
 
-The only variables that *must* be updated are input_images_path, num_images, width, and height.
+The variables that *must* be updated are: 
+1) input_images_path, 
+2) input_images_base_name, 
+3) input_images_file_type,  
+4) num_images, 
+5) width 
+6) height
+
+For example, if the directory with images is named "tmp", set  input_images_path = "./tmp".
+If the image sequence names are fileout0000.jpg, fileout0001.jpg, fileout0002.jpg .... fileout0105.jpg, then set input_images_base_name =" fileout" and set the image file type to input_images_file_type = ".jpg".  Since there are 106 images, set  num_images = 106.  If the image resolution is 100x100, then set width=100 and  height=100.
+
 The other variables can use the default values if you wish.  Just update them in the python script and save the file.  Be sure that Blender uses the changes to the variables since sometimes Blender may use previous data.
 
 
