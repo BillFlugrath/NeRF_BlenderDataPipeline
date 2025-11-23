@@ -18,7 +18,7 @@ Thus, the data pipeline starts with a Blender scene with the end result being an
 
 The project contains two text documents that explain in detail how to create new training data for the NeRF demo app.  Creating new training data is easy and simply requires:
 1) Construct a Blender scene with 3-D models and an animated camera.
-2) Output of an image sequence for each frame of the camera animation.
+2) Output of an image for each frame of the camera animation.
 3) Invoke a python script to output the new training data in an .npz file.
 
 The new training data file is then directly used by the NeRF demo application.
